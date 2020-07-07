@@ -6,7 +6,7 @@ class Survey::Survey < ActiveRecord::Base
   # relations
   has_many :attempts
   has_many :sections
-
+  belongs_to :unit
   # rails 3 attr_accessible support
   if Rails::VERSION::MAJOR < 4
     attr_accessible :name, :description, :finished, :active, :sections_attributes, :attempts_number, :locale_name, :locale_description
