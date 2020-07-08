@@ -36,6 +36,14 @@ class Survey::Question < ActiveRecord::Base
     options.incorrect
   end
 
+  def next
+    self.class.where("id > ?", id).first
+  end
+
+  def previous
+    self.class.where("id < ?", id).last
+  end
+
   def text
     I18n.locale == I18n.default_locale ? super : locale_text.blank? ? super : locale_text
   end
