@@ -2,6 +2,8 @@
 
 class Survey::Option < ActiveRecord::Base
   self.table_name = 'survey_options'
+  acts_as_votable
+
   # relations
   belongs_to :question
   has_many :answers
