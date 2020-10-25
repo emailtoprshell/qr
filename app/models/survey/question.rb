@@ -8,6 +8,7 @@ class Survey::Question < ActiveRecord::Base
   has_many   :user_answers, class_name: "Answer", foreign_key: "survey_question_id"
   has_many   :answers
   belongs_to :section
+  belongs_to :unit
 
   # rails 3 attr_accessible support
   if Rails::VERSION::MAJOR < 4
