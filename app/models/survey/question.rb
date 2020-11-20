@@ -9,8 +9,8 @@ class Survey::Question < ActiveRecord::Base
   has_many   :answers
   belongs_to :section
   belongs_to :unit
-  belongs_to :subject
-  belongs_to :user
+  belongs_to :subject, optional: true
+  belongs_to :user, optional: true
 
   # rails 3 attr_accessible support
   if Rails::VERSION::MAJOR < 4
