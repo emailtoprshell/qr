@@ -2,6 +2,7 @@
 
 class Survey::Question < ActiveRecord::Base
   include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks  
   self.table_name = 'survey_questions'
   # relations
   has_many   :options
