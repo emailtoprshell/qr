@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Survey::Question < ActiveRecord::Base
+  include Elasticsearch::Model
   self.table_name = 'survey_questions'
   # relations
   has_many   :options
